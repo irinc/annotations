@@ -1,9 +1,10 @@
-#Highlighter
+# Highlighter
 Highlghter is a jQuery plugin for allowing users to highlight portions of a page.  You define what section can be highlighted by calling the plugin on that section $("#wrapper").highlighter();
 
 The script expects each highlightable element to have a unique URI attribute (likely on the P or LI elements). This is used as metadata for saving the highlight.  The script tracks the start and ending words that the highlight covers.  This is per paragraph (or other wrapping element).
 
-##Options
+## Options
+```
 autoUpdate: false, // apparently not used
 paragraphs: "p,li", // selector to identify elements that are paragraphs
 highlightClass:"howdy", // class to show while highlighting
@@ -21,23 +22,25 @@ controls:"#controls li a",
 pClass:"selecting",
 colorRegex:/hl\-color\-([a-z,\d]*)/,
 useLoader:true
+```
 
-##Callbacks
-setupStart
-setupEnd
-start - start drag of new highlight
-selecting - fired for each new "chunk" you mouse over
-stop - stop drag of new highlight
-handleMouseDown - 
+## Callbacks
+* setupStart
+* setupEnd
+* start - start drag of new highlight
+* selecting - fired for each new "chunk" you mouse over
+* stop - stop drag of new highlight
+* handleMouseDown - 
 
-##Methods
-loadHighlighs - Expects a JSON object as defined below
-getHighlights - Will return a list of all current highlights in the defined section in a JSON object as defined below
-turnOff - turns off availablity to highlight
-turnOn - turns it on
-isOn - ask if it is on
+## Methods
+* loadHighlighs - Expects a JSON object as defined below
+* getHighlights - Will return a list of all current highlights in the defined section in a JSON object as defined below
+* turnOff - turns off availablity to highlight
+* turnOn - turns it on
+* isOn - ask if it is on
 
-##JSON structure to be sent and received
+## JSON structure to be sent and received
+```
 [
 	// a single element highlight
 	{
@@ -66,3 +69,4 @@ isOn - ask if it is on
 		}]
 	}
 ]
+```
